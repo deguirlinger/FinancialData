@@ -3,14 +3,16 @@ using System;
 using FinancialData.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FinancialData.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200206190142_AddedFirstAndLastName")]
+    partial class AddedFirstAndLastName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,22 +113,22 @@ namespace FinancialData.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("cda8eb0c-9e2e-4e8e-bd9b-f6969b267da7"),
-                            Date = new DateTime(2020, 2, 6, 11, 30, 49, 560, DateTimeKind.Local).AddTicks(8220),
+                            Id = new Guid("af47a135-05fb-486e-896a-b43b07ea1166"),
+                            Date = new DateTime(2020, 2, 6, 11, 1, 41, 950, DateTimeKind.Local).AddTicks(6470),
                             Summary = "It's hot!",
                             TemperatureC = 32
                         },
                         new
                         {
-                            Id = new Guid("f1d47b78-f0f0-4489-967a-889f9d2c453f"),
-                            Date = new DateTime(2020, 2, 6, 11, 30, 49, 577, DateTimeKind.Local).AddTicks(380),
+                            Id = new Guid("3fe335af-dec4-4122-b52a-0b62b5f05b44"),
+                            Date = new DateTime(2020, 2, 6, 11, 1, 41, 966, DateTimeKind.Local).AddTicks(7730),
                             Summary = "It's chilly...",
                             TemperatureC = 10
                         },
                         new
                         {
-                            Id = new Guid("8ae40ab9-b47a-447e-bef1-424cf110c48a"),
-                            Date = new DateTime(2020, 2, 6, 11, 30, 49, 577, DateTimeKind.Local).AddTicks(430),
+                            Id = new Guid("8ceacc18-dd09-4314-855f-7104c9f3b24c"),
+                            Date = new DateTime(2020, 2, 6, 11, 1, 41, 966, DateTimeKind.Local).AddTicks(7790),
                             Summary = "It's cold!",
                             TemperatureC = 0
                         });

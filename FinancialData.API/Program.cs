@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FinancialData.API.Data;
+using FinancialData.API.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +26,9 @@ namespace FinancialData.API
         try
         {
           var context = services.GetRequiredService<DataContext>();
+          var userManager = services.GetRequiredService<UserManager<AppUser>>();
           context.Database.Migrate();
+          Seed.SeedData(context, userManager).Wait();
         }
         catch (Exception ex)
         {

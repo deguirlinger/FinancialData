@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FinancialData.API.Data;
+using FinancialData.API.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -44,6 +46,15 @@ namespace FinancialData.API
       });
 
       services.AddControllers();
+
+      var builder = services.AddIdentityCore<AppUser>();
+      var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
+      // Enables the creation of users
+      builder.AddEntityFrameworkStores<DataContext>();
+      // Enables sign in with username and password
+      identityBuilder.AddSignInManager<SignInManager<AppUser>>();
+
+      services.AddAuthentication();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
