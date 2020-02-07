@@ -31,5 +31,11 @@ namespace FinancialData.API.Controllers
     {
       return await _mediator.Send(command);
     }
+
+    [HttpGet]
+    public async Task<ActionResult<User>> CurrentUser()
+    {
+      return await _mediator.Send(new CurrentUser.Query());
+    }
   }
 }

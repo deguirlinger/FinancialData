@@ -89,8 +89,10 @@ namespace FinancialData.API
           };
         });
 
-      // Make JWT Generator available to classes when using it
+      // Make JWT Generator available to classes
       services.AddScoped<IJwtGenerator, JwtGenerator>();
+      // Make current user available to classes
+      services.AddScoped<IUserAccessor, UserAccessor>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
