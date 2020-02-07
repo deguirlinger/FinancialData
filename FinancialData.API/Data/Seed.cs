@@ -17,29 +17,26 @@ namespace FinancialData.API.Data
                     new AppUser
                     {
                         Id = "a",
-                        UserName = "john",
-                        Email = "john@test.com",
-                        DisplayName = "Johnny",
+                        FirstName = "Jonathan",
                         LastName = "Smith",
-                        FirstName = "Jonathan"
+                        UserName = "john",
+                        Email = "john@test.com"
                     },
                     new AppUser
                     {
                         Id = "b",
-                        UserName = "mary",
-                        Email = "mary@test.com",
-                        DisplayName = "Queen Mary",
+                        FirstName = "Mary",
                         LastName = "Williams",
-                        FirstName = "Mary"
+                        UserName = "mary",
+                        Email = "mary@test.com"
                     },
                     new AppUser
                     {
                         Id = "c",
-                        UserName = "will",
-                        Email = "will@test.com",
-                        DisplayName = "Willy",
+                        FirstName = "William",
                         LastName = "Johnson",
-                        FirstName = "William"
+                        UserName = "will",
+                        Email = "will@test.com"
                     }
                 };
 

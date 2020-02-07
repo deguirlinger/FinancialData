@@ -25,5 +25,11 @@ namespace FinancialData.API.Controllers
     {
       return await _mediator.Send(query);
     }
+
+    [HttpPost("register")]
+    public async Task<ActionResult<User>> Register(Register.Command command)
+    {
+      return await _mediator.Send(command);
+    }
   }
 }

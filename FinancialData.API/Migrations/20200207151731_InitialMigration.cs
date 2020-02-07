@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FinancialData.API.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,7 +40,8 @@ namespace FinancialData.API.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    DisplayName = table.Column<string>(nullable: true)
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -166,6 +167,21 @@ namespace FinancialData.API.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "WeatherForecasts",
+                columns: new[] { "Id", "Date", "Summary", "TemperatureC" },
+                values: new object[] { new Guid("2f0541f4-e4b9-4e97-8342-74f5c457849d"), new DateTime(2020, 2, 7, 7, 17, 31, 416, DateTimeKind.Local).AddTicks(3010), "It's hot!", 32 });
+
+            migrationBuilder.InsertData(
+                table: "WeatherForecasts",
+                columns: new[] { "Id", "Date", "Summary", "TemperatureC" },
+                values: new object[] { new Guid("11749d42-db7a-498d-925f-ae85c7516351"), new DateTime(2020, 2, 7, 7, 17, 31, 432, DateTimeKind.Local).AddTicks(2120), "It's chilly...", 10 });
+
+            migrationBuilder.InsertData(
+                table: "WeatherForecasts",
+                columns: new[] { "Id", "Date", "Summary", "TemperatureC" },
+                values: new object[] { new Guid("3f2d68d2-ab33-4800-a337-27eefd168211"), new DateTime(2020, 2, 7, 7, 17, 31, 432, DateTimeKind.Local).AddTicks(2170), "It's cold!", 0 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

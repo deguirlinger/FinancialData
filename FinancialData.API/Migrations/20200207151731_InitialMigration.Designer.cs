@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinancialData.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200206193049_NextMigration")]
-    partial class NextMigration
+    [Migration("20200207151731_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,9 +28,6 @@ namespace FinancialData.API.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DisplayName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -113,22 +110,22 @@ namespace FinancialData.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("cda8eb0c-9e2e-4e8e-bd9b-f6969b267da7"),
-                            Date = new DateTime(2020, 2, 6, 11, 30, 49, 560, DateTimeKind.Local).AddTicks(8220),
+                            Id = new Guid("2f0541f4-e4b9-4e97-8342-74f5c457849d"),
+                            Date = new DateTime(2020, 2, 7, 7, 17, 31, 416, DateTimeKind.Local).AddTicks(3010),
                             Summary = "It's hot!",
                             TemperatureC = 32
                         },
                         new
                         {
-                            Id = new Guid("f1d47b78-f0f0-4489-967a-889f9d2c453f"),
-                            Date = new DateTime(2020, 2, 6, 11, 30, 49, 577, DateTimeKind.Local).AddTicks(380),
+                            Id = new Guid("11749d42-db7a-498d-925f-ae85c7516351"),
+                            Date = new DateTime(2020, 2, 7, 7, 17, 31, 432, DateTimeKind.Local).AddTicks(2120),
                             Summary = "It's chilly...",
                             TemperatureC = 10
                         },
                         new
                         {
-                            Id = new Guid("8ae40ab9-b47a-447e-bef1-424cf110c48a"),
-                            Date = new DateTime(2020, 2, 6, 11, 30, 49, 577, DateTimeKind.Local).AddTicks(430),
+                            Id = new Guid("3f2d68d2-ab33-4800-a337-27eefd168211"),
+                            Date = new DateTime(2020, 2, 7, 7, 17, 31, 432, DateTimeKind.Local).AddTicks(2170),
                             Summary = "It's cold!",
                             TemperatureC = 0
                         });

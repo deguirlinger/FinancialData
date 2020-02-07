@@ -23,8 +23,8 @@ namespace FinancialData.API.Application.User
     {
       public QueryValidator()
       {
-        RuleFor(au => au.Email).NotEmpty();
-        RuleFor(au => au.Password).NotEmpty();
+        RuleFor(u => u.Email).NotEmpty();
+        RuleFor(u => u.Password).NotEmpty();
       }
     }
 
@@ -57,9 +57,10 @@ namespace FinancialData.API.Application.User
           // TODO: generate token
           return new User
           {
-            DisplayName = user.DisplayName,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Username = user.UserName,
             Token = _jwtGenerator.CreateToken(user),
-            UserName = user.UserName,
             Image = null
           };
         }
