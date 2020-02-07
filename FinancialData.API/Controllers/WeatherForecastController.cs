@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinancialData.API.Data;
 using FinancialData.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -29,6 +30,8 @@ namespace FinancialData.API.Controllers
     }
 
     [HttpGet("{id}")]
+    // // Require authentication to access this endpoint
+    // [Authorize]
     public async Task<ActionResult<WeatherForecast>> Get(string id)
     {
       var weatherForecast = await _context.WeatherForecasts.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
