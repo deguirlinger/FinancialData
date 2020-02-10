@@ -1,12 +1,14 @@
 import React from 'react';
-import { Button } from 'antd';
-import './App.css';
+import LandingPage from './LandingPage';
+import { ThemeProvider, CssBaseline } from '@material-ui/core';
+import { theme } from './styles/theme';
 
 const App = () => {
   return (
-    <div className="App">
-      <Button type="primary">Button</Button>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <LandingPage />
+    </ThemeProvider>
   );
 };
 
