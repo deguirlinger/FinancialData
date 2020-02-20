@@ -65,7 +65,7 @@ const useStyles = makeStyles({
   }
 });
 
-export const LogIn = () => {
+export const Register = () => {
   const classes = useStyles();
 
   return (
@@ -83,7 +83,7 @@ export const LogIn = () => {
         </div>
       </Box>
       <Box className={classes.content}>
-        <h2>Log In</h2>
+        <h2>Register</h2>
         <form className={classes.formContainer}>
           <div>
             <TextField
@@ -100,9 +100,31 @@ export const LogIn = () => {
             <TextField
               className={classes.inputField}
               required
+              id="username"
+              type="text"
+              label="Username"
+              variant="outlined"
+              fullWidth={true}
+            />
+          </div>
+          <div>
+            <TextField
+              className={classes.inputField}
+              required
               id="password"
               type="password"
               label="Password"
+              variant="outlined"
+              fullWidth={true}
+            />
+          </div>
+          <div>
+            <TextField
+              className={classes.inputField}
+              required
+              id="passwordConfirm"
+              type="password"
+              label="Confirm Password"
               variant="outlined"
               fullWidth={true}
             />
@@ -115,7 +137,7 @@ export const LogIn = () => {
               className={classes.btn}
               fullWidth={true}
             >
-              Log In
+              Register
             </Button>
           </div>
         </form>
