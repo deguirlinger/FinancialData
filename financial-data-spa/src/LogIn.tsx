@@ -1,33 +1,48 @@
 import React from 'react';
 import { Box, TextField, makeStyles, Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
+    display: 'flex',
+    flexDirection: 'column',
     background: '#2b3b50',
     color: '#fff',
     height: '100vh'
   },
   header: {
-    marginLeft: '1rem',
+    display: 'flex'
+  },
+  linkStyle: {
+    color: 'inherit',
+    textDecoration: 'inherit'
+  },
+  logoLink: {
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center'
+    marginLeft: '1rem',
+    marginTop: '1rem'
   },
-  logo: {
+  logoImg: {
+    alignSelf: 'center',
     width: '1.75rem',
-    marginRight: '0.25rem'
+    marginRight: '0.25rem',
+    position: 'relative',
+    bottom: '2px'
   },
-  formContainer: {
-    width: '300px'
+  logoText: {
+    margin: 0
   },
   content: {
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
+    justifyContent: 'center'
+  },
+  formContainer: {
+    textAlign: 'center',
+    width: '300px',
     position: 'relative',
-    bottom: '90px'
+    bottom: '5%'
   },
   inputField: {
     '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
@@ -71,20 +86,20 @@ export const LogIn = () => {
   return (
     <div className={classes.root}>
       <Box className={classes.header}>
-        <div>
-          <img
-            src="../assets/value_up_icon_white.png"
-            alt="Company Logo"
-            className={classes.logo}
-          />
-        </div>
-        <div>
-          <h1>FinancialData</h1>
-        </div>
+        <Link to={'/'} className={classes.linkStyle}>
+          <Box className={classes.logoLink}>
+            <img
+              src="../assets/value_up_icon_white.png"
+              alt="Company Logo"
+              className={classes.logoImg}
+            />
+            <h1 className={classes.logoText}>FinancialData</h1>
+          </Box>
+        </Link>
       </Box>
       <Box className={classes.content}>
-        <h2>Log In</h2>
         <form className={classes.formContainer}>
+          <h2>Log In</h2>
           <div>
             <TextField
               className={classes.inputField}
